@@ -46,7 +46,7 @@ class GPTAPI: @unchecked Sendable {
     
     func uploadCSV() throws -> CSV<Named> {
         
-        let csv: CSV = try CSV<Named>(url: URL(fileURLWithPath: "/Users/mbp241/Development/SwiftUI/ChatGPT_Project/sephora_15_test.csv"))
+        let csv: CSV = try CSV<Named>(url: URL(fileURLWithPath: "sephora_15_test.csv"))
         print("CSV successfully uploaded.")
         return csv
     }
@@ -123,7 +123,7 @@ class GPTAPI: @unchecked Sendable {
          systemPrompt: String? = nil,
          temperature: Double? = nil) {
         
-        self.apiKey = apiKey ?? "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"
+        self.apiKey = apiKey ?? "API KEY"
         self.model = model ?? "gpt-4-0125-preview"
         self.systemMessage = .init(role: "system", content: systemPrompt ?? defaultSystemPrompt)
         self.temperature = temperature ?? 0.5
